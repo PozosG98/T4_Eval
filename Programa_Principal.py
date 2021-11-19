@@ -11,4 +11,20 @@ Así tendrás varias clases como son: gerente, persona, empleado, empresa, vesti
 Debes establecer en ellas comportamientos como vestirse, trabajar y entrevistar que hagan que el escenario cobre vida.
 '''
 
-print("Planteamiento del problema en pycharm")
+"""
+Este será el programa principal. Se crearán algunos programas de clases más, conforme a los datos que 
+se solicitan por el docente de la materia.
+"""
+
+# Empleados ---> Gerente y persona ---> Contratación ---> Empresa
+# Vestimenta ---> Tipos de vestimentas en horarios laborales ---> Saco, Suéter, Jeans, Botas, Casco, etc
+# Vestimenta se puede cambiar por "Acciones", tomar en cuenta.
+# Entrevistas <--- Gerente
+# Empleados (que no sean el gerente) ---> Actividades por hacer <--- Gerente ---> Realizar entrevistas y supervisión del personal
+
+
+print("Sea bienvenido al programa de la empresa... ¡Qué tenga un buen dia!")
+
+# Definiendo bien el funcionamiento del proyecto, se definió una estructura base a partir
+# de un diagrama de clases, pero conforme se va programando, se van implementando nuevas formas y maneras
+# de llegar a una mejor solución. Por el momento hasta aquí llegaré.
