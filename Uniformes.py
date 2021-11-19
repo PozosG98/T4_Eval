@@ -4,9 +4,7 @@ trabajando o buscando una oportunidad de empleo.
 Además de ello, se crearán más clases para determinar su vestimenta, conforme a
 los requisitos que se piden para realizar el programa.'''
 
-import Datos
-print("Vestimenta del personal que labore en la empresa")
 
-class Uniformes(Empleados):
-    def __init__(self, Oberol, Botas, Casco, Guantes):
-        Empleados.__init__()
+print("Vestimenta del personal que labore o quiera laborar en la empresa")
+
+

@@ -28,3 +28,22 @@ print("Sea bienvenido al programa de la empresa... ¡Qué tenga un buen dia!")
 # Definiendo bien el funcionamiento del proyecto, se definió una estructura base a partir
 # de un diagrama de clases, pero conforme se va programando, se van implementando nuevas formas y maneras
 # de llegar a una mejor solución. Por el momento hasta aquí llegaré.
+
+import Datos
+#Empleado1 = Datos.Empleados("Gerente", "Pozos Guzmán Luis Ángel", "23 años", "Másculino", "1.80 cm", "85 kg")
+#Empleado1.infoEmpleados()
+
+Industria = input(print("La empresa para la que trabaja es: "))
+print("Sea bienvenido a la planta", Industria, "Digite su rol en la empresa por favor: \n",
+      " 1 --> Gerente", "\n", " 2 --> Empleado", "\n", "3 --> Vengo a una entrevista de trabajo")
+
+"""Metemos en un ciclo infinito a nuestras funciones implementadas a continuación..."""
+while True:
+            try:
+                rol = int(input("Por favor digite el número de su interés: "))
+
+                #Implementamos un if para dar a elegir entre los números 1 al 3
+                if ((rol >= 1) & (rol <= 3)):
+                    if rol == 1:
+                        print("Has elegido la opción de gerente")
+                        Gerente = Datos.datosEmpleados
