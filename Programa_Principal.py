@@ -12,38 +12,42 @@ Debes establecer en ellas comportamientos como vestirse, trabajar y entrevistar 
 '''
 
 """
-Este será el programa principal. Se crearán algunos programas de clases más, conforme a los datos que 
-se solicitan por el docente de la materia.
+Este será el programa principal. Se crearán algunos programas de clases más, 
+conforme a los datos que se solicitan por el docente de la materia.
 """
-
-# Empleados ---> Gerente y persona ---> Contratación ---> Empresa
-# Vestimenta ---> Tipos de vestimentas en horarios laborales ---> Saco, Suéter, Jeans, Botas, Casco, etc
-# Vestimenta se puede cambiar por "Acciones", tomar en cuenta.
-# Entrevistas <--- Gerente
-# Empleados (que no sean el gerente) ---> Actividades por hacer <--- Gerente ---> Realizar entrevistas y supervisión del personal
-
-
-print("Sea bienvenido al programa de la empresa... ¡Qué tenga un buen dia!")
-
-# Definiendo bien el funcionamiento del proyecto, se definió una estructura base a partir
-# de un diagrama de clases, pero conforme se va programando, se van implementando nuevas formas y maneras
-# de llegar a una mejor solución. Por el momento hasta aquí llegaré.
-
+'''
 import Datos
 #Empleado1 = Datos.Empleados("Gerente", "Pozos Guzmán Luis Ángel", "23 años", "Másculino", "1.80 cm", "85 kg")
 #Empleado1.infoEmpleados()
 
-Industria = input(print("La empresa para la que trabaja es: "))
-print("Sea bienvenido a la planta", Industria, "Digite su rol en la empresa por favor: \n",
-      " 1 --> Gerente", "\n", " 2 --> Empleado", "\n", "3 --> Vengo a una entrevista de trabajo")
+print(" ")
+print("Sea bienvenido a Coca Cola... ¡Qué tenga un buen dia!")
+
+print("Digite su rol en la empresa... \n",
+      " 1 --> Gerente", "\n", " 2 --> Empleado", "\n", " 3 --> Vengo a una entrevista de trabajo")
+
+print(" ")
 
 """Metemos en un ciclo infinito a nuestras funciones implementadas a continuación..."""
 while True:
             try:
+                print(" ")
                 rol = int(input("Por favor digite el número de su interés: "))
-
                 #Implementamos un if para dar a elegir entre los números 1 al 3
                 if ((rol >= 1) & (rol <= 3)):
                     if rol == 1:
-                        print("Has elegido la opción de gerente")
-                        Gerente = Datos.datosEmpleados
+                        print("Gerente...")
+                        print("Para seguir su proceso es necesario ingresar sus datos en el siguiente formato", "\n",
+                              "Nombre, Sexo, Edad_años, Estatura_m, Cargo, Antiguedad")
+
+                        print("Digite su nombre: ")
+
+                        Datos = input(Datos.Gerente)
+                        print(Datos)
+                        break
+
+            except ValueError:
+                print("Ingrese solo valores en el rango del 1 al 3...")
+'''
+
+import Datos
