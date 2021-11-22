@@ -43,9 +43,9 @@ class Datos(Empleados):
         self.__genero()
 
     def mostrarInfo(self):
+        print(" ")
         print("Me presento, me llamo", self.__nombre, ", mi estatura es", self.__estatura,
-              "tengo nacionalidad", self.__nacionalidad, " y mi edad es", self.__edad)
-
+              "tengo nacionalidad", self.__nacionalidad, " y tengo", self.__edad)
         print("Soy el gerente de la empresa, me identifico con el genero", self.__genero, '\n')
 
 class vestirGerente:

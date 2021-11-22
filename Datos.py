@@ -17,27 +17,20 @@ print(" ")
 Empresa1 = principal.Industria("General Motors..." + '\033[0m')
 Empresa1.Empresa()
 
-print("Digite el número 1 o 2 de acuerdo con lo que desee realizar... \n",
-      " 1 --> Gerente", "\n", " 2 --> Salir", "\n")
+print("Digite el número 1 por favor... \n",
+      " 1 --> Entrevista")
 while True:
     try:
-        Select = float(input("Marque 1 o 2 según sea el caso: "))
-        if ((Select >=1) & (Select <= 2)):
+        Select = float(input("Marque 1 para obtener una entrevista: "))
+        if (Select ==1):
             if Select ==1:
-                print("Bienvenido Sr. Gerente")
-                Name = input("Ingrese sus datos para verificar si tiene cita con nuestro gerente por favor: ")
-                Genre = principal.Datos(Name, "Luis", "1.85 cm", "Colombiana", "24 años", "masculino")
+                Name = input('\033[m ' + "Ingrese su nombre completo para verificar si tiene cita con nuestro gerente por favor: " + '\033[m')
+                print('\033[1m ' + "Confirmamos que si cuenta con una cita, en un momento llega el gerente..." + '\033[0m')
+                Genre = principal.Datos(Name, "Luis", "1.85 cm", "colombiana", "24 años", "masculino")
                 Genre.mostrarInfo()
-
                 sacoGerente = principal.vestirGerente("saco", "3 botones")
                 sacoGerente.outfit()
                 break
-        if Select == 2:
-            print("Que tenga un buen día, gracias")
-            break
-        else:
-            print("Ingrese un valor que se encuentre en el valor correcto...")
-            break
     except ValueError:
         print("Ingrese solo números...")
 
@@ -65,27 +58,27 @@ while True:
                 print("2. Cuénteme la perspectiva que tiene de la empresa", self.B)
                 print("3. ¿Cuenta con flexibilidad de horario?", self.C)
                 print("4. ¿Tiene la facilidad de viajar?", self.D)
-                print("5. Del 0 al 100 %, digame con que porcentaje de inglés cuenta", self.E)
+                print("5. Del 0 al 100 %, dígame con qué porcentaje de inglés cuenta", self.E)
                 print("6. ¿Qué metas tiene a corto, mediano y largo plazo?", self.F)
                 print("7. ¿Cuenta con alguna certificación que lo especialice en alguna rama específica en la empresa?",
                       self.G)
-                print("8. Si en algún momento llega a ocurrir algún problema en la planta y no sabe como resolverlo, "
+                print("8. Si en algún momento llega a ocurrir algún problema en la planta y no sabe cómo resolverlo, "
                       "¿Qué alternativas propones de solución?", self.H)
                 print("9. ¿Qué te hace diferente de otros candidatos al puesto que solicitas?", self.I)
                 print("10. ¿Qué te motiva en la vida?", self.J)
-
+        print(" ")
         entrevistar = float(input("Marque 1, si desea tener una entrevista: "))
         if (entrevistar == 1):
             if entrevistar == 1:
-                print("Sea bienvenido, en un momento lo atenderemos...")
+                print('\033[1m' + "Sea bienvenido, en un momento lo atenderemos..." + '\33[0m')
                 #break
                 #print(" ")
                 # print("Mostrando sus respuestas en la consola...")
-
+            print(" ")
             print("Por favor, responda con sinceridad: ")
             A = input("1. Dígame sus motivos por los cuales desea trabajar con nosotros: ")
             B = input("2. Cuénteme la perspectiva que tiene de la empresa: ")
-            C = input("3. ¿Cuenta con flexibilidad de horario?")
+            C = input("3. ¿Cuenta con flexibilidad de horario? ")
             D = input("4. ¿Tiene la facilidad de viajar? ")
             E = input("5. Del 0 al 100 %, digame con que porcentaje de inglés cuenta: ")
             F = input("6. ¿Qué metas tiene a corto, mediano y largo plazo? ")
@@ -96,6 +89,8 @@ while True:
                 "¿Qué alternativas de solución accionarías? ")
             I = input("9. ¿Qué te hace diferente de otros candidatos al puesto que solicitas? ")
             J = input("10. ¿Qué te motiva en la vida? ")
+            print(" ")
+            print('\033[1m' + "Mostrando también sus respuestas en consola..." + '\033[0m')
             enterview = Entrevistar(A, B, C, D, E, F, G, H, I, J)
             enterview.entrevistarPersonal()
             break
@@ -103,6 +98,7 @@ while True:
             print("Ingrese un valor que se encuentre en el valor correcto...")
     except ValueError:
         print("Ingrese solo números...")
+        break
 
 with open('Respuestas.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
@@ -119,8 +115,5 @@ with open('Respuestas.csv', 'w', newline='') as csvfile:
          f"¿Qué alternativas propones de solución? {H} "])
     spamwriter.writerow([f"9. ¿Qué te hace diferente de otros candidatos al puesto que solicitas? {I} "])
     spamwriter.writerow([f"10. ¿Qué te motiva en la vida? {J} "])
-    # else:
-    print("Gracias por responder, sus respuestas se han guardado en el archivo .csv para su revisión...")
-
-
-
+    print(" ")
+    print('\033[1m' + "Gracias por responder, sus respuestas se han guardado en el archivo .csv [Respuestas] para su revisión..." + '\033[0m')
