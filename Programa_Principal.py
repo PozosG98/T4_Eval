@@ -1,53 +1,62 @@
-'''
-FR7A. PROGRAMACIÓN AVANZADA
-EVALUACIÓN TEMA 4. MODELAR UN GERENTE.
+#import csv
+class Industria:
+    def __init__(self, Empresa):
+        self.__Empresa = Empresa
 
-Escriba una aplicación que modele en el paradigma orientado a objetos el siguiente escenario:
-“El gerente de la empresa es un empleado que mide 1.80 m, se llama <nombre> y tiene puesto un saco con tres botones.
-En este momento el gerente está entrevistando a una persona para su contratación.”
+    def getterEmpresa(self):
+        return self.__Empresa
 
-Deberás generar múltiples archivos que representen la situación de la vida real en términos de programación.
-Así tendrás varias clases como son: gerente, persona, empleado, empresa, vestimenta, saco, etc.
-Debes establecer en ellas comportamientos como vestirse, trabajar y entrevistar que hagan que el escenario cobre vida.
-'''
+    def setterEmpresa(self, newNameEm):
+        self.__Empresa = newNameEm
 
-"""
-Este será el programa principal. Se crearán algunos programas de clases más, 
-conforme a los datos que se solicitan por el docente de la materia.
-"""
-'''
-import Datos
-#Empleado1 = Datos.Empleados("Gerente", "Pozos Guzmán Luis Ángel", "23 años", "Másculino", "1.80 cm", "85 kg")
-#Empleado1.infoEmpleados()
+    def Empresa(self):
+        print('\033[1m' + "Buen día, bienvenido a la planta: ", self.__Empresa)
 
-print(" ")
-print("Sea bienvenido a Coca Cola... ¡Qué tenga un buen dia!")
+class Empleados(Industria):
+    def __init__(self, cargo):
+        self.__cargo = cargo
 
-print("Digite su rol en la empresa... \n",
-      " 1 --> Gerente", "\n", " 2 --> Empleado", "\n", " 3 --> Vengo a una entrevista de trabajo")
+    def getterCargo(self):
+        self.__cargo()
+    def setterCargo(self, nCargo):
+        self.__cargo = nCargo
 
-print(" ")
+class Datos(Empleados):
+    def __init__(self, cargo, nombre, estatura, nacionalidad, edad, genero):
+        self.__nombre = nombre
+        self.__estatura = estatura
+        self.__nacionalidad = nacionalidad
+        self.__edad = edad
+        self.__genero = genero
+        self.__cargo = cargo
+        super().__init__(cargo)
 
-"""Metemos en un ciclo infinito a nuestras funciones implementadas a continuación..."""
-while True:
-            try:
-                print(" ")
-                rol = int(input("Por favor digite el número de su interés: "))
-                #Implementamos un if para dar a elegir entre los números 1 al 3
-                if ((rol >= 1) & (rol <= 3)):
-                    if rol == 1:
-                        print("Gerente...")
-                        print("Para seguir su proceso es necesario ingresar sus datos en el siguiente formato", "\n",
-                              "Nombre, Sexo, Edad_años, Estatura_m, Cargo, Antiguedad")
+    def getterNombre(self):
+        self.__nombre()
+    def getterEstatura(self):
+        self.__estatura()
+    def getterNacionalidad(self):
+        self.__nacionalidad()
+    def getterEdad(self):
+        self.__edad()
+    def getterGenero(self):
+        self.__genero()
 
-                        print("Digite su nombre: ")
+    def mostrarInfo(self):
+        print("Me presento, me llamo", self.__nombre, ", mi estatura es", self.__estatura,
+              "tengo nacionalidad", self.__nacionalidad, " y mi edad es", self.__edad)
 
-                        Datos = input(Datos.Gerente)
-                        print(Datos)
-                        break
+        print("Soy el gerente de la empresa, me identifico con el genero", self.__genero, '\n')
 
-            except ValueError:
-                print("Ingrese solo valores en el rango del 1 al 3...")
-'''
+class vestirGerente:
+    def __init__(self, saco, botones):
+        self.__saco = saco
+        self.__botones = botones
 
-import Datos
+    def getterSaco(self):
+        return self.__saco
+    def getterBotones(self):
+        return self.__botones
+
+    def outfit(self):
+        print("No me gusta vestir formal, así que hoy me puse un ", self.__saco, " color gris oxford con", self.__botones )
